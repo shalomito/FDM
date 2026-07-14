@@ -155,5 +155,4 @@ try:
 
 except Exception as e:
     st.warning('Fill in the required information')
-        unsafe_allow_html=True
-    )
+      
