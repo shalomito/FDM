@@ -111,22 +111,23 @@ try:
             'transaction_hour': [trx_hour],
             'transaction_min': [trx_min]
         })
+        
             
-            result_predict = model.predict(new_transaction)[0]
-            result_prob = model.predict_proba(new_transaction)[0, 1]
-            result_prob2 = model.predict_proba(new_transaction)[0, 0]
-            if result_predict == 1:
-                st.error('Your transaction is Fraudulent!')
-                st.write(f"Trx Fraudulent rate {result_prob:.1%}")
-                st.warning(f'Guy you be thief!')
+        result_predict = model.predict(new_transaction)[0]
+        result_prob = model.predict_proba(new_transaction)[0, 1]
+        result_prob2 = model.predict_proba(new_transaction)[0, 0]
+        if result_predict == 1:
+            st.error('Your transaction is Fraudulent!')
+            st.write(f"Trx Fraudulent rate {result_prob:.1%}")
+            st.warning(f'Guy you be thief!')
             
-            elif result_predict == 0:
-                st.success("Your transaction is Legitimate!")
-                st.write(f"Trx Legitimate rate {result_prob2:.1%}")
-                #st.info(f"Model confidence: {result_prob:.1%}")
+        elif result_predict == 0:
+            st.success("Your transaction is Legitimate!")
+            st.write(f"Trx Legitimate rate {result_prob2:.1%}")
+            #st.info(f"Model confidence: {result_prob:.1%}")
                 
-            else:
-                st.warning('Complete the form!')
+        else:
+            st.warning('Complete the form!')
      
             
     
