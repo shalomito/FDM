@@ -75,8 +75,8 @@ trx_hour = st.slider('Transaction Hour', 0, 24)
 #trx_month = st.slider('Transaction Month', 1, 12)
 
 
-try:
-    if st.button('Predict'):
+#try:
+   if st.button('Predict'):
 
         new_transaction = pd.DataFrame({
             'hour_of_day': [hour_day],
@@ -124,6 +124,6 @@ try:
 
 
 
-
-except:
-    st.warning("Fill the Required informations")
+ 
+#except:
+ #   st.warning("Fill the Required informations")
