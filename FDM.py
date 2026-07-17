@@ -110,7 +110,7 @@ try:
         result_prob = model.predict_proba(new_transaction)[0, 1]
         result_prob2 = model.predict_proba(new_transaction)[0, 0]
 
-        if result_predict == 1:
+        if result_prob > 0.7 :
             st.error(f'Your transaction is Fraudulent!\n\nTrx Fraudulent rate {result_prob:.1%}')
             time.sleep(5)
             # st.error(f"Trx Fraudulent rate {result_prob:.2%}")
@@ -119,10 +119,7 @@ try:
             time.sleep(5)
 
         else:
-            st.success("Your transaction is Legitimate!")
-            st.write(f"Trx Legitimate rate {result_prob2:.1%}")
-            st.info(f"Model confidence: {result_prob:.1%}")
-
+            st.success("Your transaction is Legitimate!, "Trx Legitimate rate {result_prob2:.1%}")
             st.balloons("Prediction completed")
 
 
