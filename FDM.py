@@ -117,7 +117,7 @@ try:
             st.warning(f'Review this transaction')
             time.sleep(5)
         else:
-            st.success(f"Your transaction is Legitimate!, Trx FRAUD rate {result_prob1:.1%}")
+            st.success(f"Your transaction is Legitimate!, Trx FRAUD rate {result_prob:.1%}")
 
 
 
